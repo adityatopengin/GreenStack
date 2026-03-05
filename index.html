@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenStack Fuels | नवीन ऊर्जेचा विश्वास</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0F172A",
+                            card: "#1E293B",
+                            emerald: "#10B981",
+                            glow: "#34D399",
+                            text: "#F8FAFC",
+                            muted: "#94A3B8",
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-dark text-brand-text min-h-screen antialiased overflow-x-hidden p-4 md:p-8 flex flex-col items-center">
+
+    <div class="fixed top-0 left-0 w-full h-[600px] bg-[radial-gradient(circle_at_50%_0%,_rgba(16,185,129,0.15),_transparent_50%)] -z-10 pointer-events-none"></div>
+
+    <nav class="w-full max-w-6xl flex justify-between items-center mb-8 px-2">
+        <div class="flex items-center">
+            <img src="assets/logo.png" alt="GreenStack Fuels Logo" class="h-16 w-16 object-contain">
+        </div>
+        <div class="text-sm font-medium text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/20">
+            Launch: 2026
+        </div>
+    </nav>
+
+    <main class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        
+        <section id="hero-container" class="md:col-span-2 md:row-span-2"></section>
+        
+        <section id="specs-container" class="md:col-span-2"></section>
+        
+        <section id="contact-container" class="md:col-span-1 md:row-span-2"></section>
+        
+        <section id="roadmap-container"></section>
+        
+        <section id="impact-container" class="md:col-span-3 lg:col-span-4"></section>
+
+    </main>
+
+    <footer class="w-full max-w-6xl mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-brand-muted pb-8">
+        <div class="flex items-center gap-2 mb-4 md:mb-0">
+            <img src="assets/logo.png" alt="Logo" class="h-6 w-6 opacity-50 grayscale">
+            <p>© 2026 GreenStack Fuels. All rights reserved.</p>
+        </div>
+        <p class="tracking-wide">नवीन ऊर्जेचा विश्वास | Maharashtra, India</p>
+    </footer>
+
+    <script src="js/components.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <script>lucide.createIcons();</script>
+</body>
+</html>
+
