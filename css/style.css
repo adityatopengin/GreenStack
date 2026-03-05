@@ -1,0 +1,128 @@
+/* 1. GLOBAL SETTINGS */
+:root {
+    --brand-dark: #0F172A;
+    --brand-card: rgba(30, 41, 59, 0.4);
+    --brand-emerald: #10B981;
+    --brand-glow: rgba(16, 185, 129, 0.2);
+    --brand-text: #F8FAFC;
+    --brand-muted: #94A3B8;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--brand-dark);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--brand-text);
+    line-height: 1.5;
+}
+
+/* 2. THE GLASS PANEL (Bento Box Core) */
+.glass-panel {
+    background: var(--brand-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 25px var(--brand-glow);
+    transform: translateY(-4px);
+}
+
+/* 3. ANIMATION STATES (For animations.js) */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. CUSTOM COMPONENTS STYLING */
+
+/* Roadmap Timeline */
+.timeline-container {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--brand-dark);
+    border: 2px solid var(--brand-emerald);
+}
+
+.timeline-dot.active {
+    box-shadow: 0 0 10px var(--brand-emerald);
+    background: var(--brand-emerald);
+}
+
+/* Impact Cycle Connectors (Arrows) */
+.arrow-connector {
+    color: rgba(16, 185, 129, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Styling */
+input, select {
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--brand-emerald) !important;
+    background-color: rgba(15, 23, 42, 0.8) !important;
+    outline: none;
+}
+
+/* 5. UTILITY CLASSES */
+.text-glow {
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+.bg-grid-glow {
+    background-image: radial-gradient(circle at 50% 0%, var(--brand-glow), transparent 70%);
+}
+
+/* 6. RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .glass-panel {
+        padding: 1.5rem !important;
+    }
+}
+
+/* 7. SCROLLBAR */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--brand-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-emerald);
+}
+
