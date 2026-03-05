@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenStack Fuels | नवीन ऊर्जेचा विश्वास</title>
+    <meta name="description" content="Maharashtra's premier biomass pellet production hub.">
     
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -20,55 +23,320 @@
                             text: "#F8FAFC",
                             muted: "#94A3B8",
                         }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                        'glow': '0 0 20px rgba(16, 185, 129, 0.15)',
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+                        'radial-glow': 'radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15), transparent 50%)',
                     }
                 }
             }
         }
     </script>
 
-    <link rel="stylesheet" href="css/style.css">
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-brand-dark text-brand-text min-h-screen antialiased overflow-x-hidden;
+            }
+        }
+        @layer utilities {
+            .glass-panel {
+                @apply bg-brand-card/40 backdrop-blur-md border border-white/10 shadow-glass rounded-2xl;
+            }
+            .glass-panel-hover {
+                @apply hover:border-brand-emerald/30 hover:shadow-glow transition-all duration-300;
+            }
+        }
+        /* Simple animation to replace Framer Motion's initial load */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-<body class="bg-brand-dark text-brand-text min-h-screen antialiased overflow-x-hidden p-4 md:p-8 flex flex-col items-center">
 
-    <div class="fixed top-0 left-0 w-full h-[600px] bg-[radial-gradient(circle_at_50%_0%,_rgba(16,185,129,0.15),_transparent_50%)] -z-10 pointer-events-none"></div>
+<body class="relative p-4 md:p-8 flex flex-col items-center">
 
-    <nav class="w-full max-w-6xl flex justify-between items-center mb-8 px-2">
+    <div class="fixed top-0 left-0 w-full h-[600px] bg-radial-glow -z-10 pointer-events-none"></div>
+
+    <nav class="w-full max-w-6xl flex justify-between items-center mb-8 px-2 fade-in-up" style="animation-delay: 0.1s;">
         <div class="flex items-center">
-            <img src="assets/logo.png" alt="GreenStack Fuels Logo" class="h-16 w-16 object-contain">
+            <img src="./logo.png" alt="GreenStack Fuels Logo" class="h-16 w-16 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
         </div>
-        <div class="text-sm font-medium text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/20">
+        <div class="text-sm font-medium text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/20 shadow-glass">
             Launch: 2026
         </div>
     </nav>
 
-    <main class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+    <main class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-auto grid-flow-dense">
         
-        <section id="hero-container" class="md:col-span-2 md:row-span-2"></section>
-        
-        <section id="specs-container" class="md:col-span-2"></section>
-        
-        <section id="contact-container" class="md:col-span-1 md:row-span-2"></section>
-        
-        <section id="roadmap-container"></section>
-        
-        <section id="impact-container" class="md:col-span-3 lg:col-span-4"></section>
+            <div class="glass-panel glass-panel-hover p-8 md:col-span-2 md:row-span-2 flex flex-col justify-center relative overflow-hidden fade-in-up" style="animation-delay: 0.2s;">
+            <div class="relative z-10">
+                
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-brand-emerald uppercase bg-brand-emerald/10 rounded-full border border-brand-emerald/20">
+                    Zero-Coal Alternative
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-tight">
+                    Powering Maharashtra's <span class="text-brand-emerald">Industrial Future.</span>
+                </h1>
+                
+                <p class="text-brand-text/80 text-lg leading-relaxed mb-8 max-w-md">
+                    We are building the state's most advanced biomass pellet hub. Delivering high-calorific, carbon-neutral fuel to replace coal and empower local farmers.
+                </p>
+                
+                <button class="bg-brand-emerald text-brand-dark px-6 py-3 rounded-lg font-bold w-max hover:bg-brand-glow transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                    Join the Waitlist
+                </button>
+            </div>
+            
+            <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-brand-emerald/10 rounded-full blur-3xl z-0 pointer-events-none"></div>
+        </div>
 
-    </main>
+        <div class="glass-panel glass-panel-hover p-6 md:col-span-2 flex flex-col justify-between fade-in-up" style="animation-delay: 0.3s;">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-brand-text">Target Specifications</h3>
+                <span class="text-xs font-medium bg-brand-emerald/10 text-brand-emerald px-2 py-1 rounded-full border border-brand-emerald/20">
+                    MNRE Standard
+                </span>
+            </div>
 
-    <footer class="w-full max-w-6xl mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-brand-muted pb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <div class="flex items-start space-x-3 bg-brand-dark/40 p-3 rounded-xl border border-white/5 hover:border-brand-emerald/20 transition-colors">
+                    <div class="mt-0.5 bg-brand-dark p-2 rounded-lg border border-white/5">
+                        <i data-lucide="flame" class="text-brand-emerald w-[18px] h-[18px]"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-brand-muted">Gross Calorific Value</p>
+                        <p class="font-semibold text-brand-text">3,800 - 4,200 kcal/kg</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3 bg-brand-dark/40 p-3 rounded-xl border border-white/5 hover:border-brand-emerald/20 transition-colors">
+                    <div class="mt-0.5 bg-brand-dark p-2 rounded-lg border border-white/5">
+                        <i data-lucide="wind" class="text-brand-emerald w-[18px] h-[18px]"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-brand-muted">Ash Content</p>
+                        <p class="font-semibold text-brand-text">&lt; 3%</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3 bg-brand-dark/40 p-3 rounded-xl border border-white/5 hover:border-brand-emerald/20 transition-colors">
+                    <div class="mt-0.5 bg-brand-dark p-2 rounded-lg border border-white/5">
+                        <i data-lucide="droplets" class="text-brand-emerald w-[18px] h-[18px]"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-brand-muted">Moisture Content</p>
+                        <p class="font-semibold text-brand-text">&lt; 10%</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3 bg-brand-dark/40 p-3 rounded-xl border border-white/5 hover:border-brand-emerald/20 transition-colors">
+                    <div class="mt-0.5 bg-brand-dark p-2 rounded-lg border border-white/5">
+                        <i data-lucide="leaf" class="text-brand-emerald w-[18px] h-[18px]"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-brand-muted">Raw Material</p>
+                        <p class="font-semibold text-brand-text">Cotton Stalk, Soy, Bamboo</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+                <div class="glass-panel glass-panel-hover p-6 md:col-span-1 md:row-span-2 flex flex-col justify-center relative overflow-hidden fade-in-up" style="animation-delay: 0.4s;">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-brand-emerald mb-2">Partner With Us</h3>
+                <p class="text-sm text-brand-muted">
+                    Secure your 2026 biomass supply. Register for pre-launch bulk pricing.
+                </p>
+            </div>
+
+            <form id="eoi-form" class="flex flex-col space-y-4 relative z-10">
+                <div>
+                    <label class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-1 block">Company Name</label>
+                    <input type="text" required
+                        class="w-full bg-brand-dark/50 border border-white/10 rounded-lg px-4 py-2 text-brand-text focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all"
+                        placeholder="e.g. Maharashtra Textiles Ltd.">
+                </div>
+                
+                <div>
+                    <label class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-1 block">Monthly Need (Tons)</label>
+                    <select class="w-full bg-brand-dark/50 border border-white/10 rounded-lg px-4 py-2 text-brand-text focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all appearance-none">
+                        <option value="<50">Less than 50 Tons</option>
+                        <option value="50-200">50 - 200 Tons</option>
+                        <option value="200-500">200 - 500 Tons</option>
+                        <option value="500+">500+ Tons</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="text-xs font-semibold text-brand-muted uppercase tracking-wider mb-1 block">Phone / WhatsApp</label>
+                    <input type="tel" required
+                        class="w-full bg-brand-dark/50 border border-white/10 rounded-lg px-4 py-2 text-brand-text focus:outline-none focus:border-brand-emerald focus:ring-1 focus:ring-brand-emerald transition-all"
+                        placeholder="+91...">
+                </div>
+
+                <button type="submit" 
+                    class="mt-2 w-full bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/50 hover:bg-brand-emerald hover:text-brand-dark font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-all group">
+                    <span>Request Quote</span>
+                    <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </form>
+
+            <div id="success-message" class="hidden flex-col items-center justify-center text-center py-8 z-10">
+                <i data-lucide="check-circle" class="w-12 h-12 text-brand-emerald mb-4"></i>
+                <h4 class="text-lg font-bold text-brand-text mb-2">Request Received</h4>
+                <p class="text-sm text-brand-muted">
+                    Our team will contact you shortly with the GreenStack Project Prospectus.
+                </p>
+            </div>
+
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-emerald/5 rounded-full blur-3xl z-0 pointer-events-none"></div>
+        </div>
+
+                <div class="glass-panel glass-panel-hover p-6 flex flex-col fade-in-up" style="animation-delay: 0.5s;">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-brand-text mb-1">Project Roadmap</h3>
+                <p class="text-sm text-brand-muted">Targeting full commercial capacity.</p>
+            </div>
+
+            <div class="relative pl-3 space-y-6 border-l border-white/10 ml-2">
+                <div class="relative flex flex-col pl-6">
+                    <div class="absolute -left-[11px] top-0 bg-brand-dark rounded-full">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-emerald"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-text">Site Acquisition & Design</p>
+                    <p class="text-xs text-brand-muted mt-1">Q1 2026</p>
+                </div>
+                
+                <div class="relative flex flex-col pl-6">
+                    <div class="absolute -left-[11px] top-0 bg-brand-dark rounded-full">
+                        <i data-lucide="clock" class="w-5 h-5 text-brand-glow animate-pulse"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-emerald">Machinery & Infrastructure</p>
+                    <p class="text-xs text-brand-muted mt-1">Q2 2026</p>
+                </div>
+
+                <div class="relative flex flex-col pl-6">
+                    <div class="absolute -left-[11px] top-0 bg-brand-dark rounded-full">
+                        <i data-lucide="circle-dashed" class="w-5 h-5 text-brand-muted/50"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-muted">Quality Testing & Pilot Run</p>
+                    <p class="text-xs text-brand-muted mt-1">Q3 2026</p>
+                </div>
+
+                <div class="relative flex flex-col pl-6">
+                    <div class="absolute -left-[11px] top-0 bg-brand-dark rounded-full">
+                        <i data-lucide="circle-dashed" class="w-5 h-5 text-brand-muted/50"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-muted">Commercial Distribution</p>
+                    <p class="text-xs text-brand-muted mt-1">Q4 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-panel glass-panel-hover p-6 md:col-span-3 lg:col-span-4 flex flex-col justify-center items-center text-center mt-4 border-t border-brand-emerald/20 fade-in-up" style="animation-delay: 0.6s;">
+            <h3 class="text-2xl font-bold text-brand-text mb-2 tracking-wide">
+                The Waste-to-Wealth Cycle
+            </h3>
+            <p class="text-brand-muted text-sm max-w-2xl mx-auto mb-8">
+                GreenStack Fuels empowers local farming communities across Maharashtra by turning agricultural liability into industrial asset, directly combating stubble burning and rural poverty.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full">
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex flex-col items-center p-4 bg-brand-dark/50 rounded-2xl border border-white/5 shadow-inner w-48 hover:border-brand-emerald/30 hover:bg-brand-emerald/5 transition-all">
+                        <div class="bg-brand-emerald/10 p-4 rounded-full mb-4 ring-1 ring-brand-emerald/20">
+                            <i data-lucide="tractor" class="w-6 h-6 text-brand-emerald"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-text mb-1">Agri-Waste</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">Farmers sell crop residue instead of burning.</p>
+                    </div>
+                    <div class="hidden md:block text-brand-emerald/40 mt-[-20px]">
+                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
+                    </div>
+                    <div class="block md:hidden text-brand-emerald/40 rotate-90 my-2">
+                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex flex-col items-center p-4 bg-brand-dark/50 rounded-2xl border border-white/5 shadow-inner w-48 hover:border-brand-emerald/30 hover:bg-brand-emerald/5 transition-all">
+                        <div class="bg-brand-emerald/10 p-4 rounded-full mb-4 ring-1 ring-brand-emerald/20">
+                            <i data-lucide="factory" class="w-6 h-6 text-brand-emerald"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-text mb-1">GreenStack</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">Waste is compressed into high-energy pellets.</p>
+                    </div>
+                    <div class="hidden md:block text-brand-emerald/40 mt-[-20px]">
+                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
+                    </div>
+                    <div class="block md:hidden text-brand-emerald/40 rotate-90 my-2">
+                        <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex flex-col items-center p-4 bg-brand-dark/50 rounded-2xl border border-white/5 shadow-inner w-48 hover:border-brand-emerald/30 hover:bg-brand-emerald/5 transition-all">
+                        <div class="bg-brand-emerald/10 p-4 rounded-full mb-4 ring-1 ring-brand-emerald/20">
+                            <i data-lucide="power" class="w-6 h-6 text-brand-emerald"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-text mb-1">Industry</h4>
+                        <p class="text-xs text-brand-muted leading-relaxed">Clean, carbon-neutral co-firing power.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+            </main> <footer class="w-full max-w-6xl mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-brand-muted pb-8 fade-in-up" style="animation-delay: 0.7s;">
         <div class="flex items-center gap-2 mb-4 md:mb-0">
-            <img src="assets/logo.png" alt="Logo" class="h-6 w-6 opacity-50 grayscale">
-            <p>© 2026 GreenStack Fuels Pvt Ltd. All rights reserved.</p>
+            <img src="./logo.png" alt="Logo" class="h-6 w-6 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <p>© 2026 GreenStack Fuels. All rights reserved.</p>
         </div>
         <p class="tracking-wide">नवीन ऊर्जेचा विश्वास | Maharashtra, India</p>
     </footer>
 
-    <script src="js/components.js"></script>
-    <script src="js/animations.js"></script>
-    
-    <script>lucide.createIcons();</script>
+    <script>
+        // 1. Initialize Lucide Icons
+        // This scans the HTML for <i data-lucide="..."></i> and replaces them with SVGs
+        lucide.createIcons();
+
+        // 2. Handle Contact Form Submission
+        // Replicating the React 'useState' behavior for a smooth UX
+        const form = document.getElementById('eoi-form');
+        const successMessage = document.getElementById('success-message');
+
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent the page from reloading
+                
+                // Hide the form
+                form.classList.add('hidden');
+                
+                // Show the success message (by removing 'hidden' and making it a flex container)
+                successMessage.classList.remove('hidden');
+                successMessage.classList.add('flex');
+            });
+        }
+    </script>
 </body>
 </html>
 
+
+Let me know when you have pasted this in, and I will give you **Part 2 (The Hero & Specs Tiles)** to drop right inside that `<main>` tag!
